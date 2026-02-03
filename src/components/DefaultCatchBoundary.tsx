@@ -1,20 +1,14 @@
-import {
-  ErrorComponent,
-  Link,
-  rootRouteId,
-  useMatch,
-  useRouter,
-} from '@tanstack/solid-router'
-import type { ErrorComponentProps } from '@tanstack/solid-router'
+import { ErrorComponent, Link, rootRouteId, useMatch, useRouter } from "@tanstack/solid-router";
+import type { ErrorComponentProps } from "@tanstack/solid-router";
 
 export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
-  const router = useRouter()
+  const router = useRouter();
   const isRoot = useMatch({
     strict: false,
     select: (state) => state.id === rootRouteId,
-  })
+  });
 
-  console.error('DefaultCatchBoundary Error:', error)
+  console.error("DefaultCatchBoundary Error:", error);
 
   return (
     <div class="min-w-0 flex-1 p-4 flex flex-col items-center justify-center gap-6">
@@ -22,7 +16,7 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
       <div class="flex gap-2 items-center flex-wrap">
         <button
           onClick={() => {
-            router.invalidate()
+            router.invalidate();
           }}
           class={`px-2 py-1 bg-gray-600 dark:bg-gray-700 rounded-sm text-white uppercase font-extrabold`}
         >
@@ -40,8 +34,8 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
             to="/"
             class={`px-2 py-1 bg-gray-600 dark:bg-gray-700 rounded-sm text-white uppercase font-extrabold`}
             onClick={(e) => {
-              e.preventDefault()
-              window.history.back()
+              e.preventDefault();
+              window.history.back();
             }}
           >
             Go Back
@@ -49,5 +43,5 @@ export function DefaultCatchBoundary({ error }: ErrorComponentProps) {
         )}
       </div>
     </div>
-  )
+  );
 }
