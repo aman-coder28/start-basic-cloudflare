@@ -1,3 +1,5 @@
+
+
 {
   "name": "tanstack-solid-start-example-basic-cloudflare",
   "private": true,
@@ -8,8 +10,7 @@
     "build": "vite build && tsc --noEmit",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types",
-    "postinstall": "npm run cf-typegen"
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@tanstack/solid-router": "^1.158.0",
