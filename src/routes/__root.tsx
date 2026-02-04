@@ -54,7 +54,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: Solid.JSX.Element }) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <HydrationScript />
       </head>
