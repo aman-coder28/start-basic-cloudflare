@@ -60,7 +60,6 @@ function RootDocument({ children }: { children: Solid.JSX.Element }) {
       </head>
       <body>
         <HeadContent />
-        <hr />
         {children}
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
