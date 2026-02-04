@@ -10,7 +10,6 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
     tailwindcss(),
     tsConfigPaths({
       projects: ["./tsconfig.json"],
