@@ -4,6 +4,9 @@
   "compatibility_date": "2025-01-01",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/solid-start/server-entry",
+  "placement": {
+    "mode": "smart",
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1,

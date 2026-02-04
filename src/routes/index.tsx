@@ -14,6 +14,8 @@ function Home() {
       <h3>Welcome Home!!!</h3>
       <p>{data()?.message}</p>
       <p>{data().myVar}</p>
+      <br />
+      <pre>{JSON.stringify(data()?.data, null, 2)}</pre>
     </div>
   );
 }

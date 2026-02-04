@@ -5,7 +5,7 @@ import { neon } from "@neondatabase/serverless";
 const sql = neon(env.DATABASE_URL ?? "");
 
 export const getData = createServerFn().handler(async () => {
-  const data = await sql`select * from todo;`;
+  const data = await sql`select title, description, completed from todo;`;
 
   return {
     message: `Running in ${navigator.userAgent}`,
