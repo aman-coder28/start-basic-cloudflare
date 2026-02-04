@@ -14,7 +14,11 @@ export default defineConfig({
     tsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    cloudflare({
+      viteEnvironment: {
+        name: "ssr",
+      },
+    }),
     tanstackStart(),
     viteSolid({ ssr: true }),
   ],

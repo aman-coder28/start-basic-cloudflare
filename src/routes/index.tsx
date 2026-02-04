@@ -1,17 +1,9 @@
 import { createFileRoute } from "@tanstack/solid-router";
-import { createServerFn } from "@tanstack/solid-start";
-import { env } from "cloudflare:workers";
+import { getData } from "~/lib/query";
 
 export const Route = createFileRoute("/")({
   loader: () => getData(),
   component: Home,
-});
-
-const getData = createServerFn().handler(() => {
-  return {
-    message: `Running in ${navigator.userAgent}`,
-    myVar: env.MY_VAR,
-  };
 });
 
 function Home() {

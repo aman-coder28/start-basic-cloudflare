@@ -7,6 +7,7 @@ import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
 import appCss from "~/styles/app.css?url";
 import { seo } from "~/utils/seo";
+import { Suspense } from "solid-js";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -19,8 +20,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       ...seo({
-        title:
-          "TanStack Start | Type-Safe, Client-First, Full-Stack React Framework",
+        title: "TanStack Start | Type-Safe, Client-First, Full-Stack React Framework",
         description: `TanStack Start is a type-safe, client-first, full-stack React framework. `,
       }),
     ],
@@ -60,7 +60,7 @@ function RootDocument({ children }: { children: Solid.JSX.Element }) {
       </head>
       <body>
         <HeadContent />
-        {children}
+        <Suspense>{children}</Suspense>
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </body>
